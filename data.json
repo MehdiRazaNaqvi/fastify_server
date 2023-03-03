@@ -1,18 +1,20 @@
 [
+    
+
     {
-        "name": "syed",
-        "age": 23
+        
+        "email": "ahsan@gmail.com",
+        "password": "pass"
     },
     {
-        "name": "mehdi",
-        "age": 23
+        
+        "email": "mehdiraza1232016@gmail.com",
+        "password": "pass"
     },
     {
-        "name": "mehdi",
-        "age": 23
-    },
-    {
-        "name": "naqvi",
-        "age": 23
+        
+        "email": "shahab@gmail.com",
+        "password": "pass"
     }
+    
 ]

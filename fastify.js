@@ -1,9 +1,31 @@
 const fastify = require("fastify")({ logger: true })
 
+// fastify.register(require('fastify-websocket'));
 
 
 
-fastify.register(require("./routes/routes"))
+fastify.register(require("./routes"))
+
+// fastify.addHook("onRequest", (req, res) => {
+//     res.send("mehdi")
+
+
+// })
+
+
+
+// fastify.addHook('preValidation', (request, reply, done) => {
+//     // console.log(request.body)
+//     request.body = { ...request.body, importantKey: 'randomString' }
+//     done()
+//     reply.send(request.body)
+
+// })
+
+
+
+
+
 
 
 
