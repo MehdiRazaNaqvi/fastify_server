@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@fastify/cors": "^8.2.0",
+    "@socket.io/admin-ui": "^0.5.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -17,7 +18,7 @@
   "main": "fastify.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon fastify.js"
+    "start": "nodemon socket.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,12 +1,12 @@
 // const data = require("../data.json")
 
-const loginUser = require("../controllers/users")
+const { loginUser, registerUser } = require("../controllers/users")
 const fastify = require("fastify")({ logger: true })
 
 const { loginUserSchema } = require("../Schemas/user")
 
 
-// fastify.register(require("./user"))
+
 
 
 
@@ -20,6 +20,16 @@ const getLoginOpts = {
 
 
 
+const getRegisterOpts = {
+
+    schema: loginUserSchema,
+
+    handler: registerUser
+
+};
+
+
+
 
 
 const routes = (fastify, options, done) => {
@@ -27,7 +37,7 @@ const routes = (fastify, options, done) => {
 
 
 
-    // fastify.get("/", (req, res) => res.send("mehdi"))
+    // fastify.get("/get", getLoginOpts)
 
     // fastify.route({
     //     method: 'POST',
@@ -58,7 +68,8 @@ const routes = (fastify, options, done) => {
 
 
 
-    fastify.post("/auth/login", getLoginOpts)
+    fastify.get("/auth/login", getLoginOpts)
+    fastify.get("/auth/register", getRegisterOpts)
 
 
     // fastify.get("/get/age", (req, res) => { res.send({ age: "23" }) })

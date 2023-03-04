@@ -5,40 +5,45 @@ const data = require("../data.json")
 
 
 
-const userLogin = async (req, res) => {
-    // fastify.get('/en', (req, res) => { res.send("req.body") })
-    // res.send({ data : req.body })
+const loginUser = async (req,res) => {
+   
+    
 
-    // data.map(v => {
-    //     if (v.email == req.body.email && v.password == req.body.password) {
 
-    //         return res.send({ message: "Success" , token : "123" });
+    // const result = await data.find(v => v.email == req.body.email && v.password == req.body.password)
 
-    //     }
-    //     else {
 
-    //         return console.log({ message: "Wrong email or password" });
+    // if (result) {
+        res.send({ message: "login"})
+    // }
+    // else {
 
-    //     }
-
+    //     res.send({ message: "failed", result })
 
     // }
-    // )
 
 
 
+}
 
-    const result = await data.find(v => v.email == req.body.email && v.password == req.body.password)
 
 
-    if (result) {
-        res.send({ message: "success", result })
-    }
-    else {
+const registerUser = async (req,res) => {
+   
+    
 
-        res.send({ message: "failed", result })
 
-    }
+    // const result = await data.find(v => v.email == req.body.email && v.password == req.body.password)
+
+
+    // if (result) {
+    //     res.send({ message: "success", result })
+    // }
+    // else {
+
+        res.send({ message: "register" })
+
+    // }
 
 
 
@@ -47,4 +52,4 @@ const userLogin = async (req, res) => {
 
 
 
-module.exports = userLogin
+module.exports = {loginUser , registerUser }
