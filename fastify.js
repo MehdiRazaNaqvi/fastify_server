@@ -1,10 +1,27 @@
 const fastify = require("fastify")({ logger: true })
-
+// postgresql
 // fastify.register(require('fastify-websocket'));
 
 
 
 fastify.register(require("./routes"))
+
+
+
+fastify.register(require('@fastify/postgres'), {
+    connectionString: 'postgres://postgres:postgresql@localhost/postgres'
+})
+
+
+
+fastify.get('/user', function (req, reply) {
+    fastify.pg.query(
+        'SELECT * FROM users',
+        function onResult(err, result) {
+            reply.send(err || result)
+        }
+    )
+})
 
 // fastify.addHook("onRequest", (req, res) => {
 //     res.send("mehdi")

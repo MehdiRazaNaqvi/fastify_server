@@ -1,6 +1,6 @@
 // const app = require("fastify");
 const fastify = require("fastify")({ logger: true })
-const { instrument } = require("@socket.io/admin-ui");
+
 const server = require("http").createServer(fastify)
 
 
@@ -52,10 +52,8 @@ io.on("connection", (socket) => {
 
 const port = process.env.PORT || 4000
 
-instrument(io, {
-    auth: false,
-    mode: "development",
-});
+
+
 
 
 
