@@ -23,6 +23,10 @@ fastify.get('/user', function (req, reply) {
     )
 })
 
+
+
+
+
 // fastify.addHook("onRequest", (req, res) => {
 //     res.send("mehdi")
 

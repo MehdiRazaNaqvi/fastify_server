@@ -20,7 +20,7 @@
   "main": "fastify.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon reciever.js"
+    "start": "nodemon rabbitmq.js"
   },
   "author": "",
   "license": "ISC",

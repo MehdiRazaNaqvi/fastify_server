@@ -20,7 +20,7 @@ amqp.connect('amqp://localhost', function (error0, connection) {
             throw error1;
         }
 
-        var queue = 'helloo';
+        var queue = 'hello';
 
         channel.assertQueue(queue, {
             durable: false
@@ -32,4 +32,5 @@ amqp.connect('amqp://localhost', function (error0, connection) {
     });
 
 
+    
 });
