@@ -4,6 +4,8 @@ const fastify = require("fastify")({ logger: true })
 
 
 
+
+
 fastify.register(require("./routes"))
 
 
@@ -28,7 +30,7 @@ fastify.get('/user', function (req, reply) {
 
 
 // fastify.addHook("onRequest", (req, res) => {
-//     res.send("mehdi")
+//     res.send("request comming")
 
 
 // })

@@ -5,18 +5,20 @@
 
 
 
-const { recieveMessagetoRabbit } = require("./recieveMessage")
+
+
+// const { recieveMessagetoRabbit } = require("./recieveMessage")
 
 
 const sendMessagetoRabbit = (data, room, io, channel) => {
 
 
-    const queue = `queue_${room}`;
 
+    const queue = `queue_${room}`;
 
     const message = JSON.stringify(data);
 
-    console.log(`this is payload ${message}`)
+    // console.log(`this is payload ${message}`)
 
     // channel.publish("chat", "", Buffer.from(message));
 
@@ -30,6 +32,9 @@ const sendMessagetoRabbit = (data, room, io, channel) => {
             'X-My-Header': 'hello world'
         }
     })
+
+
+
 
     // channel.publish(room, '', Buffer.from(message));
 

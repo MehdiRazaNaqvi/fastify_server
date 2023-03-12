@@ -68,8 +68,11 @@ const routes = (fastify, options, done) => {
 
 
 
-    fastify.get("/auth/login", getLoginOpts)
-    fastify.get("/auth/register", getRegisterOpts)
+    // fastify.get("/auth/login", getLoginOpts)
+    // fastify.get("/auth/register", getRegisterOpts)
+
+    fastify.get("/getdata", (req, res) => { res.send({ data: [{ name: "mehdi", age: 23, dept: "ubit" }] }) })
+
 
 
     // fastify.get("/get/age", (req, res) => { res.send({ age: "23" }) })
