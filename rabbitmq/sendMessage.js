@@ -1,13 +1,4 @@
 
-// const amqp = require("amqplib");
-
-// const fastify = require("fastify")({ logger: true })
-
-
-
-
-
-// const { recieveMessagetoRabbit } = require("./recieveMessage")
 
 
 const sendMessagetoRabbit = (data, room, io, channel) => {
@@ -18,9 +9,8 @@ const sendMessagetoRabbit = (data, room, io, channel) => {
 
     const message = JSON.stringify(data);
 
-    // console.log(`this is payload ${message}`)
 
-    // channel.publish("chat", "", Buffer.from(message));
+    
 
     channel.assertQueue(queue, { durable: true })
 
@@ -35,18 +25,23 @@ const sendMessagetoRabbit = (data, room, io, channel) => {
 
 
 
-
-    // channel.publish(room, '', Buffer.from(message));
-
+    channel.consume('replyQueue', (messages) => {
 
 
-    // recieveMessagetoRabbit(queue, io, channel)
+        // console.log(`Recieved ${messages.content.toString()} and replyQueue`);
+        io.to(room).emit("chat", JSON.parse(messages.content.toString()))
+        channel.ack(messages);
+
+
+
+    }, { noAck: false });
 
 
 
 
-    // return channel.close();
+    
 
+    
 
 
 }

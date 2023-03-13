@@ -26,86 +26,84 @@ container.register({
 
 
 
-const app = async () => {
 
 
 
-    const { amqpChannel, sendMessage } = container.cradle
+const { amqpChannel, sendMessage } = container.cradle
 
-    socketListners(io, amqpChannel(), sendMessage)
-
-
-
-    //     console.log("connectioned")
-
-    //     let channel = await container.cradle.amqpChannel()
-
-    //     socket.on("join_room", (room) => {
-
-    //         socket.join(room);
-
-    //         io.to(room).emit('room-joined', room)
-
-    //         const exchange = room
-
-    //         // Declare the exchange to send messages to
-    //         channel.assertExchange(exchange, "fanout", { durable: true });
-
-    //         // Bind the exchange to a queue that corresponds to the room
-    //         const queue = `queue_${room}`;
-    //         channel.assertQueue(queue, { durable: true });
-    //         channel.bindQueue(queue, exchange, "");
+socketListners(io, amqpChannel(), sendMessage)
 
 
 
-    //         // recieveMessagetoRabbit(queue, io, channel)
+//     console.log("connectioned")
 
+//     let channel = await container.cradle.amqpChannel()
 
-    //         // return channel.close().then(() => conn.close());
+//     socket.on("join_room", (room) => {
 
+//         socket.join(room);
 
-    //     });
+//         io.to(room).emit('room-joined', room)
 
+//         const exchange = room
 
+//         // Declare the exchange to send messages to
+//         channel.assertExchange(exchange, "fanout", { durable: true });
 
-
-    //     socket.on("chat", async (data, room) => {
-
-    //         console.log("onchat")
-
-    //         container.cradle.sendMessage(data, room, io, channel)
-
-
-
-    //         channel.consume('replyQueue', (messages) => {
-
-
-    //             // console.log(`Recieved ${messages.content.toString()} and replyQueue`);
-    //             io.to(room).emit("chat", JSON.parse(messages.content.toString()))
-    //             channel.ack(messages);
+//         // Bind the exchange to a queue that corresponds to the room
+//         const queue = `queue_${room}`;
+//         channel.assertQueue(queue, { durable: true });
+//         channel.bindQueue(queue, exchange, "");
 
 
 
-    //         }, { noAck: false });
+//         // recieveMessagetoRabbit(queue, io, channel)
 
 
-    //     });
+//         // return channel.close().then(() => conn.close());
+
+
+//     });
 
 
 
 
-    //     socket.on("disconnect", () => {
-    //         console.log("User Disconnected", socket.id);
-    //     });
+//     socket.on("chat", async (data, room) => {
+
+//         console.log("onchat")
+
+//         container.cradle.sendMessage(data, room, io, channel)
 
 
 
-    // });
-
-}
+//         channel.consume('replyQueue', (messages) => {
 
 
-app()
+//             // console.log(`Recieved ${messages.content.toString()} and replyQueue`);
+//             io.to(room).emit("chat", JSON.parse(messages.content.toString()))
+//             channel.ack(messages);
+
+
+
+//         }, { noAck: false });
+
+
+//     });
+
+
+
+
+//     socket.on("disconnect", () => {
+//         console.log("User Disconnected", socket.id);
+//     });
+
+
+
+// });
+
+
+
+
 
 
 

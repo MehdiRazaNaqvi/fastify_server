@@ -8,6 +8,7 @@ const connection = async () => {
     const channel = await connection.createChannel();
 
     return channel
+    
 
 }
 

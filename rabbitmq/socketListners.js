@@ -43,17 +43,6 @@ const socketListners = (io, ch, producer) => {
 
 
 
-            channel.consume('replyQueue', (messages) => {
-
-
-                // console.log(`Recieved ${messages.content.toString()} and replyQueue`);
-                io.to(room).emit("chat", JSON.parse(messages.content.toString()))
-                channel.ack(messages);
-
-
-
-            }, { noAck: false });
-
 
         });
 

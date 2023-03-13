@@ -32,8 +32,8 @@ const recieveMessagetoRabbit = async () => {
 
 
 
-    // }, { noAck: false, exclusive: false })
 
+    
 
 
 
@@ -45,7 +45,7 @@ recieveMessagetoRabbit()
 
 
 
-// module.exports = { recieveMessagetoRabbit }
+
 
 
 
